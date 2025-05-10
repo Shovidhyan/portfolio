@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root custom colors */
+:root {
+  --navy-900: #001f3f;
+  --navy-800: #003366;
+  --navy-700: #004080;
+  --light-blue: #e6f2ff;
+}
+
+/* Global scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global styles */
+body {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Tailwind Component Extensions */
+@layer components {
+  .nav-icon {
+    @apply w-8 h-8 text-gray-700 hover:text-navy-800 transition-colors duration-300;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold text-navy-900 mb-1;
+  }
+
+  .section-subtitle {
+    @apply text-4xl font-light text-blue-200 opacity-60 mb-12;
+  }
+
+  .skill-card {
+    @apply bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col;
+  }
+
+  .service-card {
+    @apply bg-blue-50 p-8 rounded-lg transition-all duration-300 hover:shadow-lg text-center h-full;
+  }
+
+  .project-card {
+    @apply relative rounded-lg overflow-hidden shadow-lg bg-white transform transition-all duration-500;
+  }
+
+  .project-card:hover {
+    @apply -translate-y-2 shadow-xl;
+  }
+
+  .btn {
+    @apply px-6 py-2 rounded-md transition-all duration-300 inline-block;
+  }
+
+  .btn-primary {
+    @apply bg-navy-900 text-white hover:bg-navy-800;
+  }
+
+  .btn-outline {
+    @apply border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-navy-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400;
+  }
+}
+
+/* Animation utilities */
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Custom vertical text utility */
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
